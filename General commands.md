@@ -1,6 +1,7 @@
-##RedHat, CentOS: Command Line
+#General Commands (RedHat, CentOS)
+-----------------------------
 
-
+## Files
 ###Listing filename
 List the file in the directory `-l` Give the file with information on rights, creator, size and creation date, and `-R` and to list all the subdirectories
 
@@ -26,6 +27,24 @@ Look for a file beginning with a letter between H to C, the second letter can be
 
     ls [HC][A-Z][0-9]???
 
+###File Manipulation
+Allow to print on the command the content of a file
+
+    cat file.txt
+
+Create a file
+
+	touch file.txt
+
+####Using pipes in the command
+Show and sort the file alphabetically the left column
+
+	cat file | sort
+
+The same as before however grep is used to find words and the "v" in grep suppress the line that contains "Word" or "last"
+
+	cat file | sort | grep -v "Word" | grep -v "last"
+
 ###Input - output
 store in a file the results of the command
 
@@ -47,16 +66,26 @@ save the results with file.txt as an input in filesorted.txt as an output
 
     sort < file.txt > filesorted.txt 
 
-###File Manipulation
-Allow to print on the command the content of a file
-
-    cat file.txt
-
-Create a file
-
-	touch file.txt
-
 ###Finding files
+#### Using locate
+Get file statistic on the system
+
+	locate -S
+
+Tell you where the file exist, it is stored in the `mlocate.db` that is updated automatically
+
+	locate file
+
+Search non case sensitive file name location, i for the non sensitive case, c to count the number of resultats
+
+	locate -ic file
+
+#### Using Which
+Get the location of binary exectuable, details about linux content
+
+	which ifconfig
+
+#### Using find
 Print working directory
 
 	pwd 
@@ -82,7 +111,8 @@ Move files with -size bigger than 500 characters
 
 	find -type f  -exec mv {} /home/large \; 
 
-###Terminal
+##Terminal
+###Bash Shell
 clear the command screen
 
     clear 
@@ -91,10 +121,42 @@ Change user to root, the password will be asked
 	
 	su root
 
+Open a new subshell environment
+	
+	bash
+
+Show all variables and value of the environment
+
+	env
+
 to quit the root session, or quit the terminal
 
 	exit
 
+Create a variable in the environment and export it to all subshell
+	
+	VARIABLE = "test"
+	export VARIABLE
+
+The variable SHELL will tell you which shell you are currently using
+
+	echo $SHELL 
+
+### C Shell
+Change the shell from bash to the C Shell
+
+	csh 
+
+Show all variables and value of an environment
+
+	setenv
+
+Set a value and show it
+	
+	setenv VARIABLE "test"
+	echo $VARIABLE
+
+### TTY - teletype writer
 show who is connected on the computer and on which session
 
     who
@@ -103,17 +165,13 @@ Give which user you are
 	
 	whoami
 
-The variable SHELL will tell you which shell you are currently using
-
-	echo $SHELL 
-
-Change the shell from bash to the C Shell
-
-	csh 
-
 Console per default, with graphical environment
 
     tty1
 
 Use **`ctrl + alt + f2`** to go to tty2 session. 
 Use **`ctrl + alt + f3`** to go to tty3 session, and so on.
+
+
+
+
