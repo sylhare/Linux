@@ -1,8 +1,8 @@
-#General Commands (RedHat, CentOS)
+# General Commands (RedHat, CentOS)
 -----------------------------
 
 ## Files
-###Listing filename
+### Listing filename
 List the file in the directory `-l` Give the file with information on rights, creator, size and creation date, and `-R` and to list all the subdirectories
 
     ls -l -R
@@ -27,7 +27,7 @@ Look for a file beginning with a letter between H to C, the second letter can be
 
     ls [HC][A-Z][0-9]???
 
-###File Manipulation
+### File Manipulation
 Allow to print on the command the content of a file
 
     cat file.txt
@@ -36,7 +36,7 @@ Create a file
 
 	touch file.txt
 
-####Using pipes in the command
+#### Using pipes in the command
 Show and sort the file alphabetically the left column
 
 	cat file | sort
@@ -45,7 +45,7 @@ The same as before however grep is used to find words and the "v" in grep suppre
 
 	cat file | sort | grep -v "Word" | grep -v "last"
 
-###Input - output
+### Input - output
 store in a file the results of the command
 
     ls -R > file.txt
@@ -66,7 +66,7 @@ save the results with file.txt as an input in filesorted.txt as an output
 
     sort < file.txt > filesorted.txt 
 
-###Finding files
+### Finding files
 #### Using locate
 Get file statistic on the system
 

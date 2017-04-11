@@ -1,7 +1,7 @@
 # System Configuration commands (RedHat CentOS)
 -----------------------------------------------
 
-##Network configurtions commands
+## Network configurtions commands
 
 Show the network information
 
