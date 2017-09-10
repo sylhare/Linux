@@ -1,3 +1,4 @@
+#!/bin/bash 
 # Docker Uninstallation
 # Ubuntu v17.04 or 16.04
 #
