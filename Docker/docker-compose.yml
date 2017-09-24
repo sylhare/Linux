@@ -1,0 +1,55 @@
+# Version 3 makes it swarm mode compatible with "docker stack deploy"
+version: "3"
+services:
+  web:
+    # Pull the image we uploaded in step 2 from the registry.
+    image: sylhare/get-started:part2
+    deploy:
+      # Run 8 instances of that image as a service called web
+      replicas: 8
+      resources:
+        # Limiting each one to use, at most, 10% of the CPU (across all cores), and 50MB of RAM.
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      # Immediately restart containers if one fails.
+      restart_policy:
+        condition: on-failure
+    # Map port 80 on the host to web’s port 80.
+    ports:
+      - "80:80"
+    # Instruct web’s containers to share port 80 via a load-balanced network called webnet. (Internally, the containers themselves will publish to web’s port 80 at an ephemeral port.)
+    networks:
+      - webnet
+  # Go to the web page :8080 to see the visualizer
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    # Volume key giving the access to the socket file for Docker
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    # Placement ensuirng this service never runs as a worker, only swarm manager
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+  # Official Redis image already present in the Docker library
+  redis:
+    image: redis
+    # Redis port is pre-configured to 6379 and now exposed to the world
+    ports:
+      - "6379:6379"
+    # The volume you created that lets the container access ./data (on the host) as /data (inside the Redis container). While containers come and go, the files stored on ./data on the specified host will persist, enabling continuity.
+    volumes:
+      - ./data:/data
+    deploy:
+      # Constraint placement ensure that it always use the same host
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+# Define the webnet network with the default settings (which is a load-balanced overlay network)
+networks:
+  webnet:
