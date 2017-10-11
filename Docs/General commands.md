@@ -1,6 +1,11 @@
 # General Commands (RedHat, CentOS)
 -----------------------------
 
+## General
+Run commands as root
+
+    sudo -i
+
 ## Files
 ### Listing filename
 List the file in the directory `-l` Give the file with information on rights, creator, size and creation date, and `-R` and to list all the subdirectories
@@ -141,8 +146,15 @@ Create a variable in the environment and export it to all subshell
 The variable SHELL will tell you which shell you are currently using
 
 	echo $SHELL 
+    
+## Directories
 
-### C Shell
+Delete a directory
+
+    rm dir path/to/directory
+
+
+## C Shell
 Change the shell from bash to the C Shell
 
 	csh 
@@ -156,7 +168,7 @@ Set a value and show it
 	setenv VARIABLE "test"
 	echo $VARIABLE
 
-### TTY - teletype writer
+## TTY - teletype writer
 show who is connected on the computer and on which session
 
     who
