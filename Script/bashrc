@@ -1,0 +1,16 @@
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Set Proxy
+function setproxy() {
+    export {http,https}_proxy="http://fastweb.int.bell.ca:8083"
+    export {HTTP,HTTPS}_PROXY="http://fastweb.int.bell.ca:8083"
+    env | grep -i proxy
+}
+
+# Unset Proxy
+function unsetproxy() {
+    unset {http,https}_proxy
+    unset {HTTP,HTTPS}_PROXY
+    echo no proxy
+}

@@ -116,8 +116,8 @@ Move files with -size bigger than 500 characters
 
 	find -type f  -exec mv {} /home/large \; 
 
-##Terminal
-###Bash Shell
+## Terminal
+### Bash Shell
 clear the command screen
 
     clear 
