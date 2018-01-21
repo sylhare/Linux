@@ -47,3 +47,4 @@ yum groupinstall "X Window System" Desktop
 ### Sources
 
 - [50 most frequently used Unix / Linux commands with examples](http://www.thegeekstuff.com/2010/11/50-linux-commands/)
+- [Shell Hacks](https://www.shellhacks.com/)

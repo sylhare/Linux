@@ -7,11 +7,11 @@ Launch the editor
 
 	nano 
 
-- `[ctrl] + [x]` to exit
+- `[ctrl] + [x]` to exit (it will ask to save before quiting)
 - `[ctrl] + [r]` to open a file, write down the path 
 - `[ctrl] + [w]` will search for a word 
 - `[ctrl] + [k]` will copy the line
-- `[ctrl] + [u]` will past the line
+- `[ctrl] + [u]` will paste the line
 - `[alt] + [/]` to go at the end of the file
 - `[alt] + [\]` to go at the beginning of the file
 - `[ctrl] + [o]` to write or save in a new or old file 
