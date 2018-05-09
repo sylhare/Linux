@@ -80,6 +80,8 @@ Delete an image, replace the `<image ID>` by the ID of an image
 
     sudo docker images ls
     sudo docker image rm <image id>
+    
+You can find my container at [docker.com/sylhare/get-started](https://store.docker.com/community/images/sylhare/get-started)
 
 ### Default Containers commandes
 

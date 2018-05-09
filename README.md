@@ -9,22 +9,21 @@ There's the online doc too.
 
 That's basically a reminder for me, if it helps someone else then cool.
 
-### RedHat
+### Tips
 
-Install [RedHat developper](https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/) offers no-cost licences to get and try RedHat Entreprise Linux.
+#### /dev/null
 
-For that you will need to:
+The `/dev/null` location in Unix is a special file that you can use to store or send information we don't ant to keep.
 
-- Register at [RedHat Developer Program](https://developers.redhat.com/)
-- Download the [RedHat Entreprise Linux for Development](https://developers.redhat.com/products/rhel/download/)
-- Install it (server, [virtual box](https://www.virtualbox.org/), vmware)
-- Register it on the [redhat customer portal](https://access.redhat.com/labs/registrationassistant/#/) (`cat /etc/redhat-release` to check the version)
-- Then run the Red Hat Subscription Management Portal service:
+Everything send there will be destroyed.
+
+```bash
+# This will place every output of a program to a file. 
+# This will delete every file called 'core' in any directory.
+rm -f $(find / -name core) &> /dev/null 
 ```
-subscription-manager register --username <username> --password <password>
-```
 
-#### Tips
+#### Keyboard
 
 - Map the keyboard in french:
 ```
@@ -44,7 +43,22 @@ Or if you need to install it
   yum groupinstall "X Window System" Desktop
 ```
 
-#### Openshift
+### RedHat
+
+Install [RedHat developper](https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/) offers no-cost licences to get and try RedHat Entreprise Linux.
+
+For that you will need to:
+
+- Register at [RedHat Developer Program](https://developers.redhat.com/)
+- Download the [RedHat Entreprise Linux for Development](https://developers.redhat.com/products/rhel/download/)
+- Install it (server, [virtual box](https://www.virtualbox.org/), vmware)
+- Register it on the [redhat customer portal](https://access.redhat.com/labs/registrationassistant/#/) (`cat /etc/redhat-release` to check the version)
+- Then run the Red Hat Subscription Management Portal service:
+```
+subscription-manager register --username <username> --password <password>
+```
+
+### Openshift
 
 [OpenShift v3](https://docs.openshift.com/enterprise/3.0/architecture/index.html) is a layered system designed to expose underlying Docker and Kubernetes concepts as accurately as possible, with a focus on easy composition of applications by a developer. 
 For example, install Ruby, push code, and add MySQL. Free ebook [here](https://www.openshift.com/promotions/for-developers.html )
@@ -57,7 +71,6 @@ OpenShift adds:
 - Managing and promoting images at scale as they flow through your system
 - Application management at scale
 - Team and user tracking for organizing a large developer organization
-
 
 OpenShift has a microservices-based architecture of smaller, decoupled units that work together. It can run on top of (or alongside) a Kubernetes cluster, with data about the objects stored in etcd, a reliable clustered key-value store. Those services are broken down by function:
 
@@ -73,4 +86,6 @@ Openshift Documentation:
 
 ### Sources
 
-- [50 most frequently used Unix / Linux commands with examples](http://www.thegeekstuff.com/2010/11/50-linux-commands/)- [Shell Hacks](https://www.shellhacks.com/)
+- [50 most frequently used Unix / Linux commands with examples](http://www.thegeekstuff.com/2010/11/50-linux-commands/)
+- [Shell Hacks](https://www.shellhacks.com/)
+- [BASH Programming](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc1)
