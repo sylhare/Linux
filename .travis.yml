@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+  
+before_install:
+- docker pull sylhare/get-started:latest
+- docker pull sylhare/hello-dotnet:v3
+- docker image ls
+
+script:
+- docker run -p 4000:80 sylhare/get-started:latest

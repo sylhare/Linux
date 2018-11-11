@@ -5,6 +5,9 @@
 Run commands as root
 
     sudo -i
+    
+`root` is a super user, to use root use `su` (which can also be used to switch account, you need to know the password to the account you wish to use).
+Another option is to use `sudo` using your own password where you have been pre-approved to use root privilege.
 
 ## Files
 ### Listing filename
@@ -116,8 +119,8 @@ Move files with -size bigger than 500 characters
 
 	find -type f  -exec mv {} /home/large \; 
 
-##Terminal
-###Bash Shell
+## Terminal
+### Bash Shell
 clear the command screen
 
     clear 
