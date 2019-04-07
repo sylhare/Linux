@@ -9,4 +9,5 @@ before_install:
 - docker image ls
 
 script:
-- docker run -p 4000:80 sylhare/get-started:latest
+- timeout 500 docker run -p 4000:80 sylhare/get-started:latest
+- echo "success"
