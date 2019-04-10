@@ -10,4 +10,4 @@ before_install:
 
 script:
 - echo "Running docker for 30s."
-- timeout 30 docker run -p 4000:80 sylhare/get-started:latest
+#- timeout 30 docker run -p 4000:80 sylhare/get-started:latest
